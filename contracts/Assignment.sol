@@ -37,12 +37,7 @@ contract Voting {
     require(validCandidate(candidate),"the person you want the total votes for is not a candidate");
     return votesReceived[candidate];
   }
-
-  function voteForCandidate(string memory candidate) public {
-    require(validCandidate(candidate),"the person you want to vote for is not a candidate");
-    votesReceived[candidate] += 1;
-  }
-
+  
   function compareStrings(string memory str1,string memory str2) private pure returns(bool){
       return keccak256(abi.encodePacked(str1)) == keccak256(abi.encodePacked(str2));
   }
@@ -55,6 +50,11 @@ contract Voting {
       }
     }
     return false;
+  }
+
+  function voteForCandidate(string memory candidate) public {
+    require(validCandidate(candidate),"the person you want to vote for is not a candidate");
+    votesReceived[candidate] += 1;
   }
 
   function isValidCandidate(string memory candidate) view public returns (string memory){
