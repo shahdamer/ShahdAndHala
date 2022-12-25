@@ -82,6 +82,5 @@ contract Voting {
     }
 
 }
- //["shahd","hala","ahmad"]
  
  
