@@ -2,14 +2,14 @@
 pragma solidity ^0.8.17;
 
 contract Voting {
+    
+  mapping (string => uint256) private votesReceived;
+  
+  string[] private candidateList;
   
   constructor (string[] memory candidateNames) public {
     candidateList = candidateNames;
   }
-  
-  mapping (string => uint256) private votesReceived;
-  
-  string[] private candidateList;
 
   function showCandidateList()view public returns (string[] memory){
   return candidateList;
