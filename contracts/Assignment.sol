@@ -52,12 +52,7 @@ contract Voting {
     return false;
   }
 
-  function voteForCandidate(string memory candidate) public {
-    require(validCandidate(candidate),"the person you want to vote for is not a candidate");
-    votesReceived[candidate] += 1;
-  }
-
-  function isValidCandidate(string memory candidate) view public returns (string memory){
+ function isValidCandidate(string memory candidate) view public returns (string memory){
     bool f=validCandidate(candidate) ;
      if(f){
         return "he/she is a candidate";
@@ -67,6 +62,12 @@ contract Voting {
       return "he/she is not a candidate";
       }
   }
+  
+  function voteForCandidate(string memory candidate) public {
+    require(validCandidate(candidate),"the person you want to vote for is not a candidate");
+    votesReceived[candidate] += 1;
+  }
+
 
    function winningCandidate() public view returns (string memory ){
         uint winningVoteCount = 0;
