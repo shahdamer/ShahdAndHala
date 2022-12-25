@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.17;
-// We have to specify what version of compiler this code will compile with
 contract Voting {
   
   mapping (string => uint256) private votesReceived;
