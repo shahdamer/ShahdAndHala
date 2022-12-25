@@ -27,9 +27,9 @@ contract Voting {
  function addCandidate(string memory candidate) public returns (string memory){
    bool f= addCandidatePri(candidate);
    if(f)
-   return "he/she is already a candidate";
+     return "add a Candidate success";
    else
-   return "add a Candidate success";
+     return "he/she is already a candidate";
  }
 
   // This function returns the total votes a candidate has received so far
